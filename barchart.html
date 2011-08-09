@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Bar Chart</title>
+	<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="../excanvas.js"></script><![endif]-->
+	<link rel="stylesheet" type="text/css" href="src/jqplot/jquery.jqplot.css" />
+	<link rel="stylesheet" type="text/css" href="src/jqplot/example/examples.css" />
+	<script language="javascript" type="text/javascript" src="src/jqplot/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="src/jqplot/jquery.jqplot.js"></script>
+	<script language="javascript" type="text/javascript" src="src/jqplot/plugins/jqplot.barRenderer.js"></script>
+	<script language="javascript" type="text/javascript" src="src/jqplot/plugins/jqplot.categoryAxisRenderer.js"></script>
+	<script language="javascript" type="text/javascript" src="src/jqplot/plugins/jqplot.highlighter.js"></script>
+	<script language="javascript" type="text/javascript" src="src/jqplot/plugins/jqplot.pointLabels.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+        var s1 = [2, 6, 7, 10];
+        var ticks = ['a', 'b', 'c', 'd'];
+		var plot = $.jqplot('chart', [s1], {
+            seriesDefaults:{
+                renderer:$.jqplot.BarRenderer,
+                pointLabels: { show: true }
+            },
+            axes: {
+                xaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer,
+                    ticks: ticks
+                }
+            },
+            highlighter: { show: false }
+        });
+    });
+	</script>
+  <body>    
+	<div id="chart" style="margin-top:20px; margin-left:20px; width:300px; height:300px;"></div>
+  </body>
+</head>
+</html>
